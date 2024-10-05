@@ -1,0 +1,36 @@
+
+.appContainer {
+    background: linear-gradient(135deg, #badded, #d57799);
+    color: white;
+    text-align: center;
+    padding: 40px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .input {
+    padding: 10px;
+    width: 300px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .input:focus {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }

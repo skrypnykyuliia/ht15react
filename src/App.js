@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useCallback, useMemo } from "react";
+import UserList from "./components/UserList";
+import styles from "./styles/App.module.css"; // Импорт стилей
 
 function App() {
+  const userList = [
+    { id: 1, name: "Alice" },
+    { id: 2, name: "Bob" },
+    { id: 3, name: "Charlie" },
+    { id: 4, name: "David" },
+    { id: 5, name: "Chris" },
+    { id: 6, name: "Adam" }
+  ];
+
+  const [filter, setFilter] = useState("");
+
+  const filterUsers = useCallback(() => {
+    return userList.filter((user) =>
+      user.name.toLowerCase().includes(filter.toLowerCase())
+    );
+  }, [filter]);
+
+  const filteredUsers = useMemo(() => filterUsers(), [filter, filterUsers]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.appContainer}>
+      <h1 className={styles.title}>User Filter App</h1>
+      <input
+        type="text"
+        placeholder="Filter users by name..."
+        value={filter}
+        onChange={(e) => setFilter(e.target.value)}
+        className={styles.input}
+      />
+      <UserList users={filteredUsers} />
     </div>
   );
 }

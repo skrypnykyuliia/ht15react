@@ -1,0 +1,28 @@
+
+.userList {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .userItem {
+    background-color: #f0f8ff;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+    color: #333;
+    width: 80%;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .userItem:hover {
+    transform: scale(1.05);
+
+    background-color: #e0f7fa;
+  }
